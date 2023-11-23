@@ -6,10 +6,10 @@ jobs:
     steps:
       - name: Setup workflow
         uses: actions/checkout@v4
-      - name: Install NodeJs
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
+      # - name: Install NodeJs
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version: 18
       - name: Install dependencies
         run: npm ci
       - name: Run tests
@@ -27,6 +27,7 @@ jobs:
         run: npm run build
       - name: Deploy project
         run:  echo "Deploying"
+      - name: Show github context
         # run: echo "${{toJSON(github)}}"
 
 
