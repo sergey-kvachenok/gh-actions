@@ -9,7 +9,7 @@ function App() {
           <img src={logo} />
         </div>
         <h1>Learn & Master GitHub Actions</h1>
-        <p>Action types</p>
+        <p>Action types test 1</p>
       </header>
       <MainContent />
     </>
