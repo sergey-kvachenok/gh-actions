@@ -4,7 +4,8 @@ on:
     types:
       - opened
     branches:
-      - 'action_types/**'
+      - main
+      - action_types
     # paths-ignore:
     #   - '.github/workflows/*'
   workflow_dispatch:
