@@ -4,7 +4,12 @@ on:
     types:
       - opened
   workflow_dispatch:
-  
+  push:
+    branches:
+      - action_types
+    path-ignore: 
+      - '.github/workflows/*'
+
 jobs:
   test:
     runs-on: ubuntu-latest
