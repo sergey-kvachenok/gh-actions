@@ -45,8 +45,8 @@ jobs:
         run: echo "${{toJSON(github)}}"
       - name: Upload artifact
         uses: actions/upload-artifact@v3
-          with:
-            name: uploaded-artifact
+        with:
+          name: uploaded-artifact
 
 
 
