@@ -47,6 +47,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: uploaded-artifact
+          path: dist/
 
 
 
