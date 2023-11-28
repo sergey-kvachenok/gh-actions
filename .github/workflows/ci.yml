@@ -4,15 +4,15 @@ on:
     types:
       - opened
     branches:
-      - 'action_types'
+      - main
     paths-ignore:
       - '.github/workflows/*'
   workflow_dispatch:
   push:
     branches:
-      - action_types
-    paths-ignore: 
-      - '.github/workflows/*'
+      - main
+    # paths-ignore: 
+    #   - '.github/workflows/*'
 
 jobs:
   test:
@@ -43,6 +43,11 @@ jobs:
         run:  echo "Deploying"
       - name: Show github context
         run: echo "${{toJSON(github)}}"
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+          with:
+            name: uploaded-artifact
+
 
 
 
