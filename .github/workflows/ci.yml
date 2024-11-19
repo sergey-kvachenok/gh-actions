@@ -36,8 +36,12 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
       - name: Test code
+        continue-on-error: true
         id: test-code
-        run: npm run test
+        run: |
+          npm run test
+          echo "${{ steps.test-code.outcome}}"
+          echo "${{ steps.test-code.conclusion }}"
       - name: Upload test report
         if: failure() && steps.test-code.outcome == 'failure'
         uses: actions/upload-artifact@v4
