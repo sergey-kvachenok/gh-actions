@@ -5,10 +5,7 @@ on:
       - control-workflow
 jobs:
   dependencies:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Use reusable workflow for dependencies
-        uses: ./.github/workflows/reusable.yml
+    uses: ./.github/workflows/reusable.yml
 
   lint:
     needs: dependencies
