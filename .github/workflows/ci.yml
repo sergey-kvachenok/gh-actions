@@ -15,8 +15,8 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: dependencies
-      # - name: Checkout code
-      #   uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
       - name: Restore dependencies
         run: |
