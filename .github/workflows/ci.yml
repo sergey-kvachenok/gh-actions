@@ -5,12 +5,19 @@ on:
       - control-workflow
 jobs:
   dependencies:
-    uses: ./.github/workflows/reusable.yml
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use reusable workflow for dependencies
+        uses: ./.github/workflows/reusable.yml
+        with:
+          dependencies-key: deps-custom-key-${{ github.sha }}
 
   lint:
     needs: dependencies
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
       # - name: Get code
       #   uses: actions/checkout@v4
       # - name: Cache dependencies
