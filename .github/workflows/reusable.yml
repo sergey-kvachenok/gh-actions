@@ -23,5 +23,3 @@ jobs:
             node_modules
             package.json
             package-lock.json
-      - name: Debug artifact contents
-        run: ls -R
