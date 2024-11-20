@@ -15,3 +15,7 @@ jobs:
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
+      - name: Create artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dependencies

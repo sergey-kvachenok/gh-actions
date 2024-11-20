@@ -9,13 +9,15 @@ jobs:
     steps:
       - name: Use reusable workflow for dependencies
         uses: ./.github/workflows/reusable.yml
-        with:
-          dependencies-key: deps-custom-key-${{ github.sha }}
 
   lint:
     needs: dependencies
     runs-on: ubuntu-latest
     steps:
+      - name: Download dependencies
+        uses: actions/download-artifact@v4
+        with:
+          name: dependencies
       - name: Checkout code
         uses: actions/checkout@v4
       # - name: Get code
