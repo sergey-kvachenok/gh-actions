@@ -24,7 +24,8 @@ jobs:
       #     cp package.json ./package.json
       #     cp package-lock.json ./package-lock.json
       - name: Debug artifact contents
-        run: ls -R
+        run: |
+          ls ${{ github.workspace }}
 
       # - name: Get code
       #   uses: actions/checkout@v4
