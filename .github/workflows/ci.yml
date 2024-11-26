@@ -15,17 +15,15 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: dependencies
-      # - name: Checkout code
-      #   uses: actions/checkout@v4
-
-      # - name: Restore dependencies
-      #   run: |
-      #     cp -r node_modules ./node_modules
-      #     cp package.json ./package.json
-      #     cp package-lock.json ./package-lock.json
       - name: Debug artifact contents
         run: |
           ls ${{ github.workspace }}
+
+      - name: Debug node_modules content
+        run: ls -l node_modules/.bin
+
+      - name: Ensure dependencies are installed
+        run: npm ci
 
       # - name: Get code
       #   uses: actions/checkout@v4
