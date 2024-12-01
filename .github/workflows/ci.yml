@@ -9,7 +9,8 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v4
-      - uses: actions/checkout
+      - name: Checkout
+        uses: actions/checkout
       - name: Cache and install dependencies
         uses: ./.github/actions/cache-dependencies/action.yml
       - name: Lint code
