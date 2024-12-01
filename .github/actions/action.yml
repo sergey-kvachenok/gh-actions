@@ -1,14 +1,14 @@
-name : Cache dependencies
-description : Caches dependencies
+name: Cache dependencies
+description: Caches dependencies
 runs:
-  using : composite
-  steps :
+  using: 'composite'
+  steps:
     - name: Cache dependencies
       id: cache
-        uses: actions/cache@v4
-        with:
-          path: node_modules
-          key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
+      uses: actions/cache@v4
+      with:
+        path: node_modules
+        key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
     - name: Install dependencies
       if: steps.cache.outputs.cache-hit != 'true'
       run: npm ci

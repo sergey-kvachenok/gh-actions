@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v4
-      - name: Cache and installdependencies
+      - name: Cache and install dependencies
         uses: ./.github/actions/cache-dependencies
       - name: Lint code
         run: npm run lint
