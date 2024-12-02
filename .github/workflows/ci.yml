@@ -10,14 +10,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout
       - name: Cache and install dependencies
-        uses: ./
+        uses: ./.github/actions/cache-dependencies
       - name: Lint code
         run: npm run lint
   test:
     runs-on: ubuntu-latest
     steps:
       - name: Get code
-        uses: actions/checkout@v4
+        uses: actions/checkout
       - name: Cache and installdependencies
         uses: ./.github/actions/cache-dependencies
       - name: Test code
