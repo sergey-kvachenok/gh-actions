@@ -9,10 +9,8 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v4
-      - name: Checkout
-        uses: actions/checkout
       - name: Cache and install dependencies
-        uses: ./.github/actions/cache-dependencies/action.yml
+        uses: sergey-kvachenok/gh-actions/.github/actions/cache-dependencies/action.yml
       - name: Lint code
         run: npm run lint
   test:
@@ -21,7 +19,7 @@ jobs:
       - name: Get code
         uses: actions/checkout@v4
       - name: Cache and installdependencies
-        uses: ./.github/actions/cache-dependencies
+        uses: sergey-kvachenok/gh-actions/.github/actions/cache-dependencies
       - name: Test code
         id: run-tests
         run: npm run test
@@ -38,7 +36,7 @@ jobs:
       - name: Get code
         uses: actions/checkout@v4
       - name: Cache and installdependencies
-        uses: ./.github/actions/cache-dependencies
+        uses: sergey-kvachenok/gh-actions/.github/actions/cache-dependencies
       - name: Build website
         run: npm run build
       - name: Upload artifacts
