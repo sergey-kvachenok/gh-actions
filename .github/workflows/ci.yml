@@ -7,11 +7,10 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      # - name: Get code
-      #   uses: actions/checkout@v4
-      # - name: Cache and install dependencies
-      - uses: .github/actions/cache-dependencies
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Cache and install dependencies
+        uses: ./
       - name: Lint code
         run: npm run lint
   test:
@@ -20,7 +19,7 @@ jobs:
       - name: Get code
         uses: actions/checkout@v4
       - name: Cache and installdependencies
-        uses: .github/actions/cache-dependencies
+        uses: ./.github/actions/cache-dependencies
       - name: Test code
         id: run-tests
         run: npm run test
