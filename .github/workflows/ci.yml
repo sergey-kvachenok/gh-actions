@@ -7,8 +7,9 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - name: Get code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+      # - name: Get code
+      #   uses: actions/checkout@v4
       - name: Cache and install dependencies
         uses: ./.github/actions/cache-dependencies
       - name: Lint code
