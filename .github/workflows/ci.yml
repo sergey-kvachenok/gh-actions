@@ -10,9 +10,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Cache and install dependencies
+        id: cache
         uses: ./.github/actions/cache-dependencies
         with:
           caching: false
+      - name: Output information
+        run: echo "Cached dependencies ${{steps.cache.outputs.used-cache}}"
       - name: Lint code
         run: npm run lint
   test:
@@ -37,7 +40,7 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v4
-      - name: Cache and installdependencies
+      - name: Cache and install dependencies
         uses: ./.github/actions/cache-dependencies
       - name: Build website
         run: npm run build
