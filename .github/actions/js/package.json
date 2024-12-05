@@ -14,5 +14,4 @@
     "@actions/github": "^6.0.0",
     "root": "github:actions/toolkit"
   }
-
 }
