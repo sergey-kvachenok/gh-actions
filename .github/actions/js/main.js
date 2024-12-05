@@ -1,8 +1,8 @@
-const core = require('@actions/core');
+import { notice } from '@actions/core';
 
 function run()
 {
-  core.notice('Hello World from js action!');
+  notice('Hello World from js action!');
 }
 
 run();
